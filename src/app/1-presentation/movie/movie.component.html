@@ -1,0 +1,8 @@
+<mat-tab-group>
+  <mat-tab label="Movies">
+    <app-movies [moviesToDisplay$]="moviesToDisplay$" (selectSortOrderEvent)="onSelectSortOrder($event)" (addtoFavoritesEvent)="onAddtoFavorites($event)" (removetoFavoritesEvent)="onRemovetoFavorites($event)"> </app-movies>
+  </mat-tab>
+  <mat-tab label="Favorites">
+    <app-favorite-movies [favorites$]="favorites$"></app-favorite-movies>
+  </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="d-flex flex-wrap justify-content-between">
+    <div *ngFor="let favorite of favorites$ | async; trackBy: trackByMovieId" class="col-sm-3 mb-3">
+      <div class="card m-2">
+        <div class="card-body d-flex flex-column align-items-center">
+          <h2 class="card-title">{{ favorite.title }}</h2>
+          <h3>Note: <span [innerHtml]="favorite.note | noteToStars"></span></h3>
+          <img alt="poster of {{ favorite.title }} movie" class="d-block img-thumbnail mb-3" style="height: 200px; width: 200px; margin: auto" src="{{ favorite.poster }}" />
+          <p class="card-text">Release date: {{ favorite.releaseDate | date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+dist
+e2e/**
+karma.conf.js
+main.ts
+node_modules
+polyfills.ts
+test.js
