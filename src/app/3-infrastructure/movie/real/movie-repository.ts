@@ -9,7 +9,7 @@ const BASE_URL: string = 'api/movie';
 export class MovieRepository implements IMovieRepository {
   public constructor(private readonly httpClient: HttpClient) {}
 
-  getAll(sortOrder?: SortOrder): Observable<Array<Movie>> {
+  public getAll(sortOrder?: SortOrder): Observable<Array<Movie>> {
     if (sortOrder) {
       const params: HttpParams = new HttpParams().set('orderBy', sortOrder);
 

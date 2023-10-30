@@ -17,5 +17,5 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class MovieRoutingModule {
-  static components = [FavoritesComponent, MovieComponent, MoviesComponent];
+  public static components = [FavoritesComponent, MovieComponent, MoviesComponent];
 }

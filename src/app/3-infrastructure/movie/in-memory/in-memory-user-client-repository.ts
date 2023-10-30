@@ -13,7 +13,7 @@ export class InMemoryUserClientRepository implements IUserClientRepository {
   private readonly _userClients$: BehaviorSubject<Array<UserClient>> = new BehaviorSubject<Array<UserClient>>(USER_CLIENTS);
   public userClients$: Observable<Array<UserClient>> = this._userClients$.asObservable();
 
-  addMovieToFavoriteMovies(addMovieToFavoriteMoviesRequest: IAddMovieToFavoriteMoviesRequest): Observable<void> {
+  public addMovieToFavoriteMovies(addMovieToFavoriteMoviesRequest: IAddMovieToFavoriteMoviesRequest): Observable<void> {
     const userClients: Array<UserClient> = this._userClients$.getValue();
     const movieSearched: Movie | undefined = MOVIES.find((movie: Movie) => movie.id === addMovieToFavoriteMoviesRequest.movieId);
     const userClientSearched: UserClient | undefined = userClients.find((userClient: UserClient) => userClient.id === addMovieToFavoriteMoviesRequest.userClientId);
@@ -27,7 +27,7 @@ export class InMemoryUserClientRepository implements IUserClientRepository {
     return EMPTY;
   }
 
-  getFavoriteMoviesByUserId(userId: number, orderBy?: SortOrder): Observable<Movie[]> {
+  public getFavoriteMoviesByUserId(userId: number, orderBy?: SortOrder): Observable<Movie[]> {
     const userClientSearched: UserClient | undefined = this._userClients$.getValue().find((userClient: UserClient) => userClient.id === userId);
 
     if (userClientSearched) {
@@ -37,7 +37,7 @@ export class InMemoryUserClientRepository implements IUserClientRepository {
     return of([]);
   }
 
-  removeMovieToFavoriteMovies(removeMovieToFavoriteMoviesRequest: IRemoveMovieToFavoriteMoviesRequest): Observable<void> {
+  public removeMovieToFavoriteMovies(removeMovieToFavoriteMoviesRequest: IRemoveMovieToFavoriteMoviesRequest): Observable<void> {
     const userClients: Array<UserClient> = this._userClients$.getValue();
     const movieSearched: Movie | undefined = MOVIES.find((movie: Movie) => movie.id === removeMovieToFavoriteMoviesRequest.movieId);
     const userClientSearched: UserClient | undefined = userClients.find((userClient: UserClient) => userClient.id === removeMovieToFavoriteMoviesRequest.userClientId);

@@ -2,7 +2,7 @@ import { SortOrder } from '@project/application/movie/common/models/sort-order';
 import { Movie } from '@project/domain/entities/movie/movie';
 
 export class InMemorySortBy {
-  static execute(movies: Array<Movie>, orderBy?: SortOrder): Array<Movie> {
+  public static execute(movies: Array<Movie>, orderBy?: SortOrder): Array<Movie> {
     switch (orderBy) {
       case 'byAscendingDate':
         return movies.sort((a: Movie, b: Movie) => a.releaseDate - b.releaseDate);

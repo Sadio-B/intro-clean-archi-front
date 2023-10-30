@@ -14,17 +14,17 @@ import { MovieToDisplay } from './common/movie-to-display';
   styleUrls: ['./movie.component.scss'],
 })
 export class MovieComponent implements OnInit, OnDestroy {
-  moviesToDisplay$!: Observable<Array<MovieToDisplay>>;
+  public moviesToDisplay$!: Observable<Array<MovieToDisplay>>;
 
   private _favorites$: Subject<Array<Movie>> = new Subject();
-  favorites$: Observable<Array<Movie>> = this._favorites$.asObservable();
+  public favorites$: Observable<Array<Movie>> = this._favorites$.asObservable();
 
   private _movies$: Subject<Array<Movie>> = new Subject();
   private movies$: Observable<Array<Movie>> = this._movies$.asObservable();
 
   private destroy$: Subject<void> = new Subject();
 
-  constructor(
+  public constructor(
     @Inject('GetAllMoviesUseCase')
     private readonly getAllMoviesUseCase: GetAllMoviesUseCase,
     @Inject('GetAllFavorisByUserClientIdUseCase')
@@ -35,13 +35,13 @@ export class MovieComponent implements OnInit, OnDestroy {
     private readonly removeMovieToFavoritesUseCase: RemoveMovieToFavoritesUseCase
   ) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.getMoviesToDisplay();
     this.getMovies();
     this.getFavorites();
   }
 
-  onSelectSortOrder(sortOrder: SortOrder): void {
+  public onSelectSortOrder(sortOrder: SortOrder): void {
     this.getAllMoviesUseCase
       .execute(sortOrder)
       .pipe(takeUntil(this.destroy$))
@@ -50,7 +50,7 @@ export class MovieComponent implements OnInit, OnDestroy {
       });
   }
 
-  onAddtoFavorites(movieId: number): void {
+  public onAddtoFavorites(movieId: number): void {
     concat(
       this.addMovieToFavoritesUseCase.execute({
         movieId: movieId,
@@ -66,7 +66,7 @@ export class MovieComponent implements OnInit, OnDestroy {
       });
   }
 
-  onRemovetoFavorites(movieId: number): void {
+  public onRemovetoFavorites(movieId: number): void {
     concat(
       this.removeMovieToFavoritesUseCase.execute({
         movieId: movieId,
@@ -121,11 +121,11 @@ export class MovieComponent implements OnInit, OnDestroy {
       });
   }
 
-  trackByMovieId(_index: number, movie: Movie): number {
+  public trackByMovieId(_index: number, movie: Movie): number {
     return movie.id;
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
   }

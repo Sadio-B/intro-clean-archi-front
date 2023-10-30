@@ -1,7 +1,7 @@
 export class Movie {
-  id!: number;
-  note!: number;
-  poster: string = '';
-  releaseDate!: number;
-  title!: string;
+  public id!: number;
+  public note!: number;
+  public poster: string = '';
+  public releaseDate!: number;
+  public title!: string;
 }

@@ -9,26 +9,26 @@ import { MovieToDisplay } from '../common/movie-to-display';
   styleUrls: ['./movies.component.scss'],
 })
 export class MoviesComponent {
-  @Input() moviesToDisplay$: Observable<Array<MovieToDisplay>> | undefined;
-  @Output() selectSortOrderEvent: EventEmitter<SortOrder> = new EventEmitter<SortOrder>();
-  @Output() addtoFavoritesEvent: EventEmitter<number> = new EventEmitter<number>();
-  @Output() removetoFavoritesEvent: EventEmitter<number> = new EventEmitter<number>();
+  @Input() public moviesToDisplay$: Observable<Array<MovieToDisplay>> | undefined;
+  @Output() public selectSortOrderEvent: EventEmitter<SortOrder> = new EventEmitter<SortOrder>();
+  @Output() public addtoFavoritesEvent: EventEmitter<number> = new EventEmitter<number>();
+  @Output() public removetoFavoritesEvent: EventEmitter<number> = new EventEmitter<number>();
 
-  onChangeSortOrderSelection(event: Event): void {
+  public onChangeSortOrderSelection(event: Event): void {
     const sortOrder: SortOrder = (event.target as HTMLSelectElement).value as SortOrder;
 
     this.selectSortOrderEvent.emit(sortOrder);
   }
 
-  onClickAddtoFavoritesButton(movieId: number): void {
+  public onClickAddtoFavoritesButton(movieId: number): void {
     this.addtoFavoritesEvent.emit(movieId);
   }
 
-  onClickRemvetoFavoritesButton(movieId: number): void {
+  public onClickRemvetoFavoritesButton(movieId: number): void {
     this.removetoFavoritesEvent.emit(movieId);
   }
 
-  trackByMovieId(_index: number, movieToDisplay: MovieToDisplay): number {
+  public trackByMovieId(_index: number, movieToDisplay: MovieToDisplay): number {
     return movieToDisplay.id;
   }
 }

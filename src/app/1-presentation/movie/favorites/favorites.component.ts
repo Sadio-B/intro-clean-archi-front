@@ -8,9 +8,9 @@ import { Movie } from '@project/domain/entities/movie/movie';
   styleUrls: ['./favorites.component.scss'],
 })
 export class FavoritesComponent {
-  @Input() favorites$: Observable<Array<Movie>> | undefined;
+  @Input() public favorites$: Observable<Array<Movie>> | undefined;
 
-  trackByMovieId(_index: number, movie: Movie): number {
+  public trackByMovieId(_index: number, movie: Movie): number {
     return movie.id;
   }
 }

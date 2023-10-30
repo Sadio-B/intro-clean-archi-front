@@ -9,15 +9,15 @@ import { IUserClientRepository } from '@project/application/movie/contracts/repo
 const BASE_URL: string = 'api/client';
 
 export class UserClientRepository implements IUserClientRepository {
-  constructor(private readonly httpClient: HttpClient) {}
+  public constructor(private readonly httpClient: HttpClient) {}
 
-  addMovieToFavoriteMovies(addMovieToFavoriteMoviesRequest: IAddMovieToFavoriteMoviesRequest): Observable<void> {
+  public addMovieToFavoriteMovies(addMovieToFavoriteMoviesRequest: IAddMovieToFavoriteMoviesRequest): Observable<void> {
     const url: string = `${BASE_URL}/${addMovieToFavoriteMoviesRequest.userClientId}/movie/${addMovieToFavoriteMoviesRequest.movieId}/favorite`;
 
     return this.httpClient.post<void>(url, null);
   }
 
-  getFavoriteMoviesByUserId(userId: number, sortOrder?: SortOrder): Observable<Movie[]> {
+  public getFavoriteMoviesByUserId(userId: number, sortOrder?: SortOrder): Observable<Movie[]> {
     const url: string = `${BASE_URL}/${userId}/movie/favorite`;
 
     if (sortOrder) {
@@ -29,7 +29,7 @@ export class UserClientRepository implements IUserClientRepository {
     return this.httpClient.get<Array<Movie>>(url);
   }
 
-  removeMovieToFavoriteMovies(removeMovieToFavoriteMoviesRequest: IRemoveMovieToFavoriteMoviesRequest): Observable<void> {
+  public removeMovieToFavoriteMovies(removeMovieToFavoriteMoviesRequest: IRemoveMovieToFavoriteMoviesRequest): Observable<void> {
     const url: string = `${BASE_URL}/${removeMovieToFavoriteMoviesRequest.userClientId}/movie/${removeMovieToFavoriteMoviesRequest.movieId}/favorite`;
 
     return this.httpClient.delete<void>(url);

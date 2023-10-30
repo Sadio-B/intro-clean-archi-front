@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'noteToStars',
 })
 export class NoteToStarsPipe implements PipeTransform {
-  transform(note: number): string {
+  public transform(note: number): string {
     const starsNumberToDisplay: number = Math.round(note);
 
     let result: string = '';

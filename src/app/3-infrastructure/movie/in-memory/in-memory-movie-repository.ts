@@ -7,7 +7,7 @@ import { SortOrder } from '@project/application/movie/common/models/sort-order';
 import { InMemorySortBy } from './in-memory-sort-by';
 
 export class InMemoryMovieRepository implements IMovieRepository {
-  getAll(orderBy?: SortOrder): Observable<Array<Movie>> {
+  public getAll(orderBy?: SortOrder): Observable<Array<Movie>> {
     return of(MOVIES).pipe(
       tap<Array<Movie>>(movies => InMemorySortBy.execute(movies, orderBy)),
       map((movies: Array<Movie>) => movies)

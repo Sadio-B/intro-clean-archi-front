@@ -4,9 +4,9 @@ import { IUserClientRepository } from '../../contracts/repositories/i-user-clien
 import { SortOrder } from '../../common/models/sort-order';
 
 export class GetAllFavorisByUserClientIdUseCase {
-  constructor(private readonly userClientRepository: IUserClientRepository) {}
+  public constructor(private readonly userClientRepository: IUserClientRepository) {}
 
-  execute(userClientId: number, sortOrder?: SortOrder): Observable<Array<Movie>> {
+  public execute(userClientId: number, sortOrder?: SortOrder): Observable<Array<Movie>> {
     return this.userClientRepository.getFavoriteMoviesByUserId(userClientId, sortOrder);
   }
 }

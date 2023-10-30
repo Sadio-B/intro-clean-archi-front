@@ -3,9 +3,9 @@ import { IUserClientRepository } from '../../contracts/repositories/i-user-clien
 import { IRemoveMovieToFavoriteMoviesRequest } from './request/i-remove-movie-to-favorites-request';
 
 export class RemoveMovieToFavoritesUseCase {
-  constructor(private readonly userClientRepository: IUserClientRepository) {}
+  public constructor(private readonly userClientRepository: IUserClientRepository) {}
 
-  execute(removeMovieToFavoriteMoviesRequest: IRemoveMovieToFavoriteMoviesRequest): Observable<void> {
+  public execute(removeMovieToFavoriteMoviesRequest: IRemoveMovieToFavoriteMoviesRequest): Observable<void> {
     return this.userClientRepository.removeMovieToFavoriteMovies(removeMovieToFavoriteMoviesRequest);
   }
 }
