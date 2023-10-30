@@ -4,6 +4,11 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@project/application/*":["src/app/2-core/application/*"],
+      "@project/domain/*":["src/app/2-core/domain/*"],
+      "@project/infrastructure/*":["src/app/3-infrastructure/*"],
+    },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,

@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/no-magic-numbers */
-import { Movie } from 'src/app/2-core/domain/entities/movie/movie';
+import { Movie } from '@project/domain/entities/movie/movie';
 
 export const MOVIES: Array<Movie> = [
   {

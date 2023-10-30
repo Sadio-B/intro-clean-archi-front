@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { Movie } from 'src/app/2-core/domain/entities/movie/movie';
+import { Movie } from '@project/domain/entities/movie/movie';
 import { IUserClientRepository } from '../../contracts/repositories/i-user-client-repository';
 import { SortOrder } from '../../common/models/sort-order';
 

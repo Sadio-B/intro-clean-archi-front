@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SortOrder } from 'src/app/2-core/application/movie/common/models/sort-order';
+import { SortOrder } from '@project/application/movie/common/models/sort-order';
 import { MovieToDisplay } from '../common/movie-to-display';
 
 @Component({

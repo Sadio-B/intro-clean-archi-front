@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Movie } from '../../../2-core/domain/entities/movie/movie';
+import { Movie } from '@project/domain/entities/movie/movie';
 
 @Component({
   selector: 'app-favorite-movies',

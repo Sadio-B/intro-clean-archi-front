@@ -1,8 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { SortOrder } from 'src/app/2-core/application/movie/common/models/sort-order';
-import { IMovieRepository } from 'src/app/2-core/application/movie/contracts/repositories/i-movie-repository';
-import { Movie } from 'src/app/2-core/domain/entities/movie/movie';
+import { SortOrder } from '@project/application/movie/common/models/sort-order';
+import { IMovieRepository } from '@project/application/movie/contracts/repositories/i-movie-repository';
+import { Movie } from '@project/domain/entities/movie/movie';
 
 const BASE_URL: string = 'api/movie';
 

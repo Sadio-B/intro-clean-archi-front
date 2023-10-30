@@ -1,10 +1,10 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { SortOrder } from 'src/app/2-core/application/movie/common/models/sort-order';
-import { IUserClientRepository } from 'src/app/2-core/application/movie/contracts/repositories/i-user-client-repository';
-import { IAddMovieToFavoriteMoviesRequest } from 'src/app/2-core/application/movie/use-cases/add-movie-to-favorites-use-case/request/i-add-movie-to-favorite-movies-request';
-import { IRemoveMovieToFavoriteMoviesRequest } from 'src/app/2-core/application/movie/use-cases/remove-movie-to-favorites-use-case/request/i-remove-movie-to-favorites-request';
-import { Movie } from 'src/app/2-core/domain/entities/movie/movie';
+import { SortOrder } from '@project/application/movie/common/models/sort-order';
+import { IAddMovieToFavoriteMoviesRequest } from '@project/application/movie/use-cases/add-movie-to-favorites-use-case/request/i-add-movie-to-favorite-movies-request';
+import { IRemoveMovieToFavoriteMoviesRequest } from '@project/application/movie/use-cases/remove-movie-to-favorites-use-case/request/i-remove-movie-to-favorites-request';
+import { Movie } from '@project/domain/entities/movie/movie';
+import { IUserClientRepository } from '@project/application/movie/contracts/repositories/i-user-client-repository';
 
 const BASE_URL: string = 'api/client';
 

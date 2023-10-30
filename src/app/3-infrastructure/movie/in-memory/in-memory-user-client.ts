@@ -1,4 +1,4 @@
-import { UserClient } from 'src/app/2-core/domain/entities/movie/user-client';
+import { UserClient } from '@project/domain/entities/movie/user-client';
 
 export const USER_CLIENTS: Array<UserClient> = [
   {

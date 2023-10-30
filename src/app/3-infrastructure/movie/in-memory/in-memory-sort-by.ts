@@ -1,5 +1,5 @@
-import { SortOrder } from 'src/app/2-core/application/movie/common/models/sort-order';
-import { Movie } from 'src/app/2-core/domain/entities/movie/movie';
+import { SortOrder } from '@project/application/movie/common/models/sort-order';
+import { Movie } from '@project/domain/entities/movie/movie';
 
 export class InMemorySortBy {
   static execute(movies: Array<Movie>, orderBy?: SortOrder): Array<Movie> {

@@ -1,12 +1,12 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject, combineLatest, concat, of, takeUntil } from 'rxjs';
-import { SortOrder } from '../../2-core/application/movie/common/models/sort-order';
-import { AddMovieToFavoritesUseCase } from '../../2-core/application/movie/use-cases/add-movie-to-favorites-use-case/add-movie-to-favorites-use-case';
-import { GetAllMoviesUseCase } from '../../2-core/application/movie/use-cases/get-all-movies-use-case/get-all-movies-use-case';
-import { Movie } from '../../2-core/domain/entities/movie/movie';
-import { GetAllFavorisByUserClientIdUseCase } from '../../2-core/application/movie/use-cases/get-all-favoris-by-user-client-id-use-case/get-all-favoris-by-user-client-id-use-case';
+import { AddMovieToFavoritesUseCase } from '@project/application/movie/use-cases/add-movie-to-favorites-use-case/add-movie-to-favorites-use-case';
+import { GetAllFavorisByUserClientIdUseCase } from '@project/application/movie/use-cases/get-all-favoris-by-user-client-id-use-case/get-all-favoris-by-user-client-id-use-case';
+import { GetAllMoviesUseCase } from '@project/application/movie/use-cases/get-all-movies-use-case/get-all-movies-use-case';
+import { Movie } from '@project/domain/entities/movie/movie';
+import { RemoveMovieToFavoritesUseCase } from '@project/application/movie/use-cases/remove-movie-to-favorites-use-case/remove-movie-to-favorites-use-case';
+import { SortOrder } from '@project/application/movie/common/models/sort-order';
 import { MovieToDisplay } from './common/movie-to-display';
-import { RemoveMovieToFavoritesUseCase } from 'src/app/2-core/application/movie/use-cases/remove-movie-to-favorites-use-case/remove-movie-to-favorites-use-case';
 
 @Component({
   selector: 'app-movie',
