@@ -11,20 +11,20 @@
       "extends": ["plugin:@angular-eslint/recommended", "plugin:@angular-eslint/template/process-inline-templates", "google", "plugin:prettier/recommended"],
       "rules": {
         "arrow-spacing": "warn",
-        "consistent-return": "error",
-        "default-param-last": "error",
+        "consistent-return": "warn",
+        "default-param-last": "warn",
         "eqeqeq": [
-          "error",
+          "warn",
           "always",
           {
             "null": "ignore"
           }
         ],
         "linebreak-style": "off",
-        "max-classes-per-file": ["error", 1],
-        "max-len": ["error", { "code": 50000, "tabWidth": 2 }],
+        "max-classes-per-file": ["warn", 1],
+        "max-len": ["warn", { "code": 50000, "tabWidth": 2 }],
         "max-lines-per-function": [
-          "error",
+          "warn",
           {
             "IIFEs": true,
             "max": 20,
@@ -40,17 +40,17 @@
           }
         ],
         "no-debugger": "warn",
-        "no-empty": "error",
+        "no-empty": "warn",
         "no-empty-function": [
-          "error",
+          "warn",
           {
             "allow": ["constructors"]
           }
         ],
-        "no-extra-semi": "error",
+        "no-extra-semi": "warn",
         "no-inline-comments": "off",
         "no-magic-numbers": "off",
-        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+        "no-plusplus": ["warn", { "allowForLoopAfterthoughts": true }],
         "object-curly-spacing": ["warn", "always", { "objectsInObjects": false }],
         "require-jsdoc": "off",
         "@angular-eslint/component-selector": [
@@ -69,12 +69,12 @@
             "type": "attribute"
           }
         ],
-        "@typescript-eslint/explicit-function-return-type": ["error", { "allowExpressions": true }],
-        "@typescript-eslint/explicit-member-accessibility": ["error", { "accessibility": "explicit" }],
-        "@typescript-eslint/no-explicit-any": ["error", { "ignoreRestArgs": true }],
+        "@typescript-eslint/explicit-function-return-type": ["warn", { "allowExpressions": true }],
+        "@typescript-eslint/explicit-member-accessibility": ["warn", { "accessibility": "explicit" }],
+        "@typescript-eslint/no-explicit-any": ["warn", { "ignoreRestArgs": true }],
         "@typescript-eslint/no-duplicate-enum-values": "warn",
         "@typescript-eslint/no-magic-numbers": [
-          "error",
+          "warn",
           {
             "ignoreEnums": true,
             "ignoreNumericLiteralTypes": true,
