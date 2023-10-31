@@ -1,0 +1,104 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": ["plugin:@angular-eslint/recommended", "plugin:@angular-eslint/template/process-inline-templates", "google", "plugin:prettier/recommended"],
+      "rules": {
+        "arrow-spacing": "warn",
+        "consistent-return": "warn",
+        "default-param-last": "warn",
+        "eqeqeq": [
+          "warn",
+          "always",
+          {
+            "null": "ignore"
+          }
+        ],
+        "linebreak-style": "off",
+        "max-classes-per-file": ["warn", 1],
+        "max-len": ["warn", { "code": 50000, "tabWidth": 2 }],
+        "max-lines-per-function": [
+          "warn",
+          {
+            "IIFEs": true,
+            "max": 20,
+            "skipBlankLines": true,
+            "skipComments": true
+          }
+        ],
+        "new-cap": "off",
+        "no-console": [
+          "warn",
+          {
+            "allow": ["warn", "error"]
+          }
+        ],
+        "no-debugger": "warn",
+        "no-empty": "warn",
+        "no-empty-function": [
+          "warn",
+          {
+            "allow": ["constructors"]
+          }
+        ],
+        "no-extra-semi": "warn",
+        "no-inline-comments": "off",
+        "no-magic-numbers": "off",
+        "no-plusplus": ["warn", { "allowForLoopAfterthoughts": true }],
+        "object-curly-spacing": ["warn", "always", { "objectsInObjects": false }],
+        "require-jsdoc": "off",
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "prefix": "app",
+            "style": "camelCase",
+            "type": "attribute"
+          }
+        ],
+        "@typescript-eslint/explicit-function-return-type": ["warn", { "allowExpressions": true }],
+        "@typescript-eslint/explicit-member-accessibility": ["warn", { "accessibility": "explicit" }],
+        "@typescript-eslint/no-explicit-any": ["warn", { "ignoreRestArgs": true }],
+        "@typescript-eslint/no-duplicate-enum-values": "warn",
+        "@typescript-eslint/no-magic-numbers": [
+          "warn",
+          {
+            "ignoreEnums": true,
+            "ignoreNumericLiteralTypes": true,
+            "ignoreReadonlyClassProperties": true,
+            "ignoreTypeIndexes": true
+          }
+        ],
+        "@typescript-eslint/prefer-enum-initializers": "warn",
+        "@typescript-eslint/type-annotation-spacing": [
+          "warn",
+          {
+            "after": true,
+            "before": false
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended", "plugin:prettier/recommended"],
+      "rules": {
+        "@angular-eslint/template/use-track-by-function": ["error"],
+        "@angular-eslint/template/no-duplicate-attributes": ["error"]
+      }
+    }
+  ]
+}

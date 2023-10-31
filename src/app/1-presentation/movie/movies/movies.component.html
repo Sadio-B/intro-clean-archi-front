@@ -1,0 +1,29 @@
+<div class="container">
+  <select class="form-select my-3" aria-label="choose a sort order" (change)="onChangeSortOrderSelection($event)">
+    <option selected value="default">Choose a sort order</option>
+    <option value="byAscendingNote">Sort by ascending note</option>
+    <option value="byDescendingNote">Sort by descending note</option>
+    <option value="byAscendingDate">Sort by Ascending date</option>
+    <option value="byDescendingDate">Sort by descending date</option>
+  </select>
+  <div class="d-flex flex-wrap justify-content-between">
+    <div *ngFor="let movie of moviesToDisplay$ | async; trackBy: trackByMovieId" class="col-sm-3 mb-3">
+      <div class="card m-2">
+        <div class="card-body">
+          <h2 class="card-title text-center">{{ movie.title }}</h2>
+          <h3 class="text-center">Note: <span [innerHtml]="movie.note | noteToStars"></span></h3>
+          <img src="{{ movie.poster }}" class="d-block img-thumbnail mb-3" alt="poster of {{ movie.title }} movie" style="height: 200px; width: 200px; margin: auto" />
+          <p class="card-text text-center">Release date: {{ movie.releaseDate | date }}</p>
+          <div class="d-flex justify-content-center">
+            <ng-container *ngIf="movie.isInFavorites; else isNotInFavorites">
+              <button class="btn btn-primary d-flex flex-column align-items-center" (click)="onClickRemvetoFavoritesButton(movie.id)"><i class="fas fa-minus"></i><span class="ml-1">favorites</span></button>
+            </ng-container>
+            <ng-template #isNotInFavorites>
+              <button class="btn btn-primary d-flex flex-column align-items-center" (click)="onClickAddtoFavoritesButton(movie.id)"><i class="fas fa-plus"></i><span class="ml-1">favorites</span></button>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
