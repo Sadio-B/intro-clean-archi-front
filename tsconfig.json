@@ -5,9 +5,15 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "paths": {
-      "@project/application/*":["src/app/2-core/application/*"],
-      "@project/domain/*":["src/app/2-core/domain/*"],
-      "@project/infrastructure/*":["src/app/3-infrastructure/*"],
+      "@project/application/*": [
+        "src/app/2-core/application/*"
+      ],
+      "@project/domain/*": [
+        "src/app/2-core/domain/*"
+      ],
+      "@project/infrastructure/*": [
+        "src/app/3-infrastructure/*"
+      ]
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -23,12 +29,13 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2020",
+    "target": "ES2022",
     "module": "es2020",
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
