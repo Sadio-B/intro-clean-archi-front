@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "intro-clean-archi-movie-ui:build:production"
+              "buildTarget": "intro-clean-archi-movie-ui:build:production"
             },
             "development": {
-              "browserTarget": "intro-clean-archi-movie-ui:build:development"
+              "buildTarget": "intro-clean-archi-movie-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "intro-clean-archi-movie-ui:build"
+            "buildTarget": "intro-clean-archi-movie-ui:build"
           }
         },
         "test": {
